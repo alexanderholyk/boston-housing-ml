@@ -9,6 +9,7 @@ from sklearn.datasets import fetch_openml # Fetch dataset from OpenML
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import ElasticNet
 
 RANDOM_STATE = 42
 
@@ -24,8 +25,8 @@ def main():
     # Split data into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=RANDOM_STATE)
 
-    # Train Linear Regression model
-    model = LinearRegression()
+    # Train model
+    model = ElasticNet(alpha=0.5, l1_ratio=0.7, random_state=RANDOM_STATE)
     model.fit(X_train, y_train)
 
     # Evaluate the model
