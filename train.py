@@ -26,7 +26,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=RANDOM_STATE)
 
     # Train model
-    model = ElasticNet(alpha=0.5, l1_ratio=0.7, random_state=RANDOM_STATE) # Using ElasticNet as a baseline
+    model = ElasticNet(alpha=0.5, l1_ratio=0.7, random_state=RANDOM_STATE)
     model.fit(X_train, y_train)
 
     # Evaluate the model
